@@ -1,0 +1,9 @@
+ext {
+    moduleId = "PLAYZYMOD"
+    moduleName = "PlayZy"
+    moduleVersion = "v1.0"
+    moduleVersionCode = 1
+    authorName = "Dapz"
+    desc = "Hacking Android Games"
+    moduleLibraryName = "DEDZYPLAY"
+}

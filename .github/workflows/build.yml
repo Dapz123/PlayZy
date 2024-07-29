@@ -1,0 +1,35 @@
+name: Build Module
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch: { }
+
+jobs:
+  build_module:
+    strategy:
+      matrix:
+        build_var: ['debug', 'release']
+    name: Module ZIP
+    runs-on: ubuntu-latest
+    steps:
+        - name: Checkout
+          uses: actions/checkout@v4
+        - name: Setup Java
+          uses: actions/setup-java@v4
+          with:
+            distribution: temurin
+            java-version: 20
+            cache: gradle
+        - name: Gradlew Permissions
+          run: chmod +x ./gradlew
+        - name: Module ${{matrix.build_var}}
+          run: |
+            var=${{matrix.build_var}}
+            ./gradlew :module:assemble${var}
+        - name: Upload Artifact ${{matrix.build_var}}
+          uses: actions/upload-artifact@v4
+          with:
+            name: module-${{matrix.build_var}}
+            path: out/module_magisk_${{matrix.build_var}}
