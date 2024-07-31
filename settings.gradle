@@ -14,10 +14,10 @@ pluginManagement {
 dependencyResolutionManagement {
     repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
     repositories {
+		mavenCentral()
         google()
-        mavenCentral()
     }
 }
 
 rootProject.name = "PlayZy"
-include ':app', ':module'
+include ':module'
