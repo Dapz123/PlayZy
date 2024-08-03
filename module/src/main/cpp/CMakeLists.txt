@@ -30,6 +30,7 @@ set(DOBBY_LIB ${CMAKE_CURRENT_SOURCE_DIR}/libs/${CMAKE_ANDROID_ARCH_ABI}/libdobb
 add_library(${CMAKE_PROJECT_NAME} SHARED
         # List C/C++ source files with relative paths to this CMakeLists.txt.
         main.cpp
+        hook.cpp
 		module.cpp
         ${IMGUI_SRC}
         ${xdl-src})

@@ -39,7 +39,7 @@ public:
 private:
     Api *api;
     JNIEnv *env;
-    bool startModule = false;
+    bool startModule;
     char *appDataDir;
     void *data;
     size_t length;
